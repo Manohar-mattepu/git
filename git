@@ -1,0 +1,88 @@
+**Installation of GIT**
+
+Windows :
+1. Open PowerShell on Windows
+2. Run `Get-ExecutionPolicy`. If it returns `Restricted`, then run `Set-ExecutionPolicy AllSigned` or `Set-ExecutionPolicy Bypass -Scope Process`.
+3. Install Chocolatey package manager for Windows using the following command
+	`Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+ 4. Execute the command :   
+	 `choco install git.install
+ 5. Search for GIT Bash on the machine and run which confirms the availability of GIT 
+	 `git --version`
+
+GIT configuration:
+1. Execute the command:
+	`git config --global user.name "My Demo" 
+	`git config --global user.email mydemo@example.com`
+2. You can find the value update under "C:\Users\{user name}\.gitconfig" or else create a .gitconfig and update the values above
+
+GIT Commands: 
+1. git init : Initializes a new Git repository in the current directory. 
+	Example: git init 
+	
+ 2. git clone : Copies an existing Git repository to your local machine. 
+    Example: git clone https://github.com/username/repo.git
+    https://username:<TOKEN>@github.com/reponame/repo.git
+    
+ 3. git add : Adds files to the staging area for the next commit. 
+     Example: git add file.txt 
+ 
+4.  git status : Displays the current status of the repository. 
+    Example: git status 
+        
+5. git commit : Records changes to the repository. 
+    Example: git commit -m "Added file.txt"
+     
+6. git push : Uploads local changes to a remote repository. 
+	Example: git push origin main 
+	
+7. git pull : Downloads changes from a remote repository and merges them with your local changes. 
+	 Example: git pull origin main  
+    
+8. git log : Displays a log of all commits in the repository. 
+	Example: git log
+	
+9. git branch : Creates, lists, or deletes branches. 
+   Example: git branch feature-branch 
+   git branch -m master main  --rename the master branch to main in local repo
+   
+10. git merge : Combines changes from different branches, switch the branch first where you would like to merge
+      Example: git merge feature-branch
+      
+11. git remote : Displays a list of remote repositories that you've connected to. 
+      Example: git remote -v 
+      To add a remote repo, git remote add origin https://github.com/jetopsB055/example.git
+      To remove a remote repo,  git remote rm origin
+      
+12. git fetch : Downloads changes from a remote repository but does not merge them 
+      with your local branch. 
+      Example: git fetch origin 
+
+13. git checkout : Switches between different branches or commits. 
+      Example: git checkout main
+      
+14. git reset : Upstages changes or rolls back to a previous commit. 
+      Example: git reset HEAD file.txt 
+      
+15. git revert : Creates a new commit that undoes changes from a previous commit. 
+      Example: git revert abcdef1234567890  -- Reverting a Single Commit
+      git revert HEAD~3..HEAD  -- git revert HEAD~3..HEAD
+	  git revert -m 2 merge1234567890  - revert a merge commit
+	  git revert A..B  - reverting range of commits
+      
+16. git stash : Temporarily stores changes that are not ready to be committed. 
+      Example: git stash
+      git stash list
+      git stash show status@{0}
+      
+ 17. git tag : Assigns a tag to a specific commit. 
+       Example: git tag v1.0.0
+       
+ 18. git diff : Displays differences between two commits or between the working directory 
+       and the staging area. 
+       Example: git diff HEAD~1..HEAD
+       
+19. git blame : Shows who made changes to each line of a file. 
+      Example: git blame file.txt 
+      
+20. git submodule : Allows you to include other Git repositories within your own repository. Example: git submodule add https://github.com/username/repo.git 
